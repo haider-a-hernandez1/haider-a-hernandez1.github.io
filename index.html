@@ -1,20 +1,69 @@
 <!DOCTYPE html>
-<html>
-    <head>
-       <title>mi pimera pagina </title>
-    </head>
-
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Vida - Haider Hernandez</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
 <body>
- <img src="fotoperfil.jpg" alt="imagen de perfil" height="100" width="150">
+    <div class="container">
+        <header class="header">
+            <img src="fotoperfil.jpg" alt="Haider Hernandez" class="profile-img">
+            <div class="info">
+                <h1>Haider Hernandez</h1>
+                <p class="profession">Desarrollador de Software</p>
+                <p class="contact">Correo: haider@correo.com | Teléfono: +123 456 789</p>
+            </div>
+        </header>
 
-<h3>Nombre:</h3>
-<p>Haider Hernandez</p> 
-<h3>Profesion:</h3>
-<p>Desarollador de software </p>
-<h3>Conocimientos:</h3>
-<p>Analisis de datos, <br> administracion de redes, <br> 
-    lenguajes de programacion, <br> logica y algoritmos
-</p>
+        <div class="content">
+            <section class="about">
+                <h2>Acerca de Mí</h2>
+                <p>Soy un desarrollador de software apasionado por la creación de soluciones tecnológicas eficientes y escalables. Me especializo en el desarrollo de aplicaciones web y análisis de datos. Busco siempre mejorar mis habilidades y contribuir al crecimiento de los proyectos en los que participo.</p>
+            </section>
+
+            <section class="experience">
+                <h2>Experiencia Profesional</h2>
+                <div class="job">
+                    <h3>Desarrollador Backend - Empresa ABC</h3>
+                    <p><strong>2020 - 2023</strong></p>
+                    <p>Desarrollo de aplicaciones backend utilizando Node.js, Express, y bases de datos SQL. Implementación de APIs RESTful y optimización de consultas de bases de datos.</p>
+                </div>
+                <div class="job">
+                    <h3>Analista de Datos - Empresa XYZ</h3>
+                    <p><strong>2018 - 2020</strong></p>
+                    <p>Gestión de grandes volúmenes de datos, análisis y visualización usando Python y herramientas como Pandas y Matplotlib.</p>
+                </div>
+            </section>
+
+            <section class="education">
+                <h2>Educación</h2>
+                <div class="education-item">
+                    <h3>Licenciatura en Ciencias de la Computación</h3>
+                    <p><strong>Universidad Tecnológica</strong></p>
+                    <p>2014 - 2018</p>
+                </div>
+            </section>
+
+            <section class="skills">
+                <h2>Habilidades</h2>
+                <ul>
+                    <li>Node.js</li>
+                    <li>React</li>
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>Docker</li>
+                    <li>Git</li>
+                </ul>
+            </section>
+
+            <section class="contact-buttons">
+                <a href="mailto:haider@correo.com" class="button">Contactar</a>
+                <a href="https://github.com/haider" class="button">GitHub</a>
+                <a href="https://linkedin.com/in/haider" class="button">LinkedIn</a>
+            </section>
+        </div>
+    </div>
 </body>
-
 </html>
