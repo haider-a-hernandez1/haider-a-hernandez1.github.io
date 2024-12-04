@@ -79,5 +79,43 @@ body {
     border-radius: 8px;
     margin-top: 15px;
 }
+.slogan{
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.header-section{
+  
+    text-align: center;
+    
+
+}
+.intro{
+   
+    text-align: center;
+}
+.imgfondo{
+background-image: url(fondo.jpg);
+background-attachment: fixed;
+background-size: cover;
+width: 1200px;
+height: 500px;
 
 
+}
+
+.teximg{
+background-image: url(filosofia.jpg);
+height: 500px;
+background-position: center;
+background-size: cover;
+}
+
+
+.header-section h2, .header-section p {
+    color: black;
+}
+.intro h2, .intro p{
+    color: black;
+}
