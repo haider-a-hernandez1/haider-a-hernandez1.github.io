@@ -28,7 +28,88 @@ function validarFormulario() {
     return true;
 }
 
-// Lógica para agregar cursos con descuentos
+
+
+
+// Variables globales
+let carrito = [];  // Array para almacenar los cursos seleccionados
+const totalSpan = document.getElementById("total-carrito");
+const descuentoSpan = document.getElementById("descuento");
+const totalConDescuentoSpan = document.getElementById("total-descuento");
+const btnBorrarCarrito = document.getElementById("btnBorrarCarrito");
+
+// Función para agregar cursos al carrito
+function agregarAlCarrito(precio, nombre) {
+    carrito.push({ nombre, precio });
+    actualizarCarrito(); // Actualizar el carrito
+}
+
+// Función para actualizar el carrito y el total
+function actualizarCarrito() {
+    let total = 0;
+    carrito.forEach(item => {
+        total += item.precio;
+    });
+
+    // Mostrar el total en el carrito
+    totalSpan.textContent = total.toFixed(2);
+
+    // Calcular el descuento y el total con descuento
+    const descuento = total * 0.1;  // 10% de descuento
+    const totalConDescuento = total - descuento;
+
+    // Mostrar el descuento y el total con descuento
+    descuentoSpan.textContent = descuento.toFixed(2);
+    totalConDescuentoSpan.textContent = totalConDescuento.toFixed(2);
+}
+
+// Función para borrar el carrito
+function borrarCarrito() {
+    carrito = []; // Limpiar el array del carrito
+    actualizarCarrito(); // Actualizar la vista del carrito
+    alert("Carrito vacío, puedes empezar de nuevo.");
+}
+
+// Agregar eventos a los botones "Agregar al carrito"
+document.querySelectorAll('.agregar-carrito').forEach(button => {
+    button.addEventListener('click', (event) => {
+        const precio = parseFloat(event.target.getAttribute('data-precio'));
+        const nombre = event.target.previousElementSibling.previousElementSibling.textContent;
+        agregarAlCarrito(precio, nombre); // Agregar al carrito
+    });
+});
+
+// Evento para borrar el carrito
+btnBorrarCarrito.addEventListener("click", borrarCarrito);
+
+// Función para validar formulario (mantén la misma lógica que ya tienes)
+function validarFormulario() {
+    var nombre = document.getElementById("nombre").value;
+    var email = document.getElementById("email").value;
+    var contrasena = document.getElementById("contrasena").value;
+    var confirmarContrasena = document.getElementById("confirmarContrasena").value;
+    var mensajeError = document.getElementById("mensajeError");
+
+    if (contrasena !== confirmarContrasena) {
+        mensajeError.textContent = "Las contraseñas no coinciden.";
+        return false;
+    }
+
+    if (nombre.length < 3) {
+        mensajeError.textContent = "El nombre debe tener al menos 3 caracteres.";
+        return false;
+    }
+
+    if (!email.includes("@")) {
+        mensajeError.textContent = "Por favor, introduce un correo electrónico válido.";
+        return false;
+    }
+
+    mensajeError.textContent = "";
+    return true;
+}
+
+// Lógica para agregar cursos con descuento (como ya tienes)
 let cursos = [
     { nombre: "Matemáticas", precio: 25 },
     { nombre: "Pintura", precio: 30 },
@@ -39,9 +120,7 @@ let cursos = [
 
 let total = 0;
 let contadorCursos = 0;
-
 const btnAgregarCurso = document.getElementById("btnAgregarCurso");
-const totalElemento = document.getElementById("total");
 const cursosListado = document.getElementById("cursosListado");
 
 btnAgregarCurso.addEventListener("click", () => {
@@ -73,3 +152,85 @@ btnAgregarCurso.addEventListener("click", () => {
         alert("Ya no hay más cursos disponibles.");
     }
 });
+
+
+
+
+// Función para agregar cursos al carrito
+function agregarAlCarrito(precio, nombre) {
+    carrito.push({ nombre, precio });
+    actualizarCarrito(); // Actualizar el carrito
+
+    // Mostrar una alerta de confirmación
+    alert(`${nombre} ha sido agregado al carrito. Precio: $${precio}`);
+
+    // Actualizar la bola flotante con el total del carrito
+    actualizarBolaFlotante();
+}
+
+
+
+// Función para actualizar la bola flotante
+function actualizarBolaFlotante() {
+    let total = 0;
+    carrito.forEach(item => {
+        total += item.precio;
+    });
+    
+    // Actualizar el contenido del total en la bola flotante
+    document.getElementById('totalCarritoFlotante').textContent = total.toFixed(2);
+}
+
+// Función para actualizar el carrito y el total
+function actualizarCarrito() {
+    let total = 0;
+    carrito.forEach(item => {
+        total += item.precio;
+    });
+
+    // Mostrar el total en el carrito
+    totalSpan.textContent = total.toFixed(2);
+
+    // Calcular el descuento y el total con descuento
+    const descuento = total * 0.1;  // 10% de descuento
+    const totalConDescuento = total - descuento;
+
+    // Mostrar el descuento y el total con descuento
+    descuentoSpan.textContent = descuento.toFixed(2);
+    totalConDescuentoSpan.textContent = totalConDescuento.toFixed(2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    
+
+
+

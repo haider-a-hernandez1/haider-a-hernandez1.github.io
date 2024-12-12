@@ -43,28 +43,49 @@
             </form>
         </section>
 
-        <!-- Cursos Disponibles -->
-        <section id="cursos">
-            <h2>Cursos Disponibles</h2>
-            <div id="cursosListado">
-                <!-- Aquí se irán agregando los cursos -->
-            </div>
-            <button id="btnAgregarCurso">Agregar Curso</button>
-            <h3>Total a Pagar: $<span id="total">0</span></h3>
-        </section>
+
+
+
+
+        <button class="agregar-carrito" data-precio="50">Agregar al carrito</button>
+        <button id="btnBorrarCarrito">Borrar Carrito</button>
+
+
+<h3>Total a Pagar: $<span id="total-carrito">0</span></h3>
+<h3>Descuento: $<span id="descuento">0</span></h3>
+<h3>Total con Descuento: $<span id="total-descuento">0</span></h3>
+
+
+
+<div id="bolaFlotante">
+    <span id="totalCarritoFlotante">0.00</span> <!-- Aquí se mostrará el total -->
+</div>
+
+
+
+
+
+
+
+        
+    
 
         <section id="portafolio" class="intro">
             <h2>Bienvenido a la Plataforma Educativa</h2>
             <p>En nuestra plataforma podrás acceder a una variedad de cursos en línea, participar en foros de discusión, seguir tu progreso y obtener certificados de finalización. ¡Comienza hoy y lleva tu aprendizaje al siguiente nivel!</p>
         </section>
 
-        <section class="courses">
+        
+
+
             <!-- Curso 1: Matemáticas -->
             <div class="course">
                 <h3>Matemáticas</h3>
                 <p>Desde álgebra hasta cálculo avanzado, aprende los fundamentos y más.</p>
                 <img src="matematicas.jpg" alt="Curso de Matemáticas" class="course-image">
                 <p>Este curso abarca todo lo necesario para entender las matemáticas en diferentes niveles. ¡Comienza hoy y domina las fórmulas!</p>
+                <p>Precio: $<span class="precio">50</span></p>
+                <button class="agregar-carrito" data-precio="50">Agregar al carrito</button>
                 <a href="matematicas.html" class="button">Ver Curso</a>
             </div>
 
@@ -74,6 +95,8 @@
                 <p>Aprende técnicas de pintura al óleo, acuarela y más.</p>
                 <img src="pintura.jpg" alt="Curso de Pintura" class="course-image">
                 <p>Domina las técnicas de pintura y explora tu creatividad. Aprende de los maestros y conviértete en un experto.</p>
+                <p>Precio: $<span class="precio">70</span></p>
+                <button class="agregar-carrito" data-precio="70">Agregar al carrito</button>
                 <a href="pintura.html" class="button">Ver Curso</a>
             </div>
 
@@ -83,6 +106,8 @@
             <p>Domina la protección digital, redes y seguridad informática.</p>
             <img src="ciberseguridad.jpg" alt="Curso de Ciberseguridad" class="course-image">
             <p>Protege tu información y aprende las mejores prácticas para la seguridad en línea en este curso avanzado.</p>
+            <p>Precio: $<span class="precio">60</span></p>
+            <button class="agregar-carrito" data-precio="60">Agregar al carrito</button>
             <a href="ciberseguridad.html" class="button">Ver Curso</a>
         </div>
 
@@ -92,6 +117,8 @@
             <p>Aprende todo sobre reparación, mantenimiento y diagnóstico de autos.</p>
             <img src="mecanica.jpg" alt="Curso de Mecánica Automotriz" class="course-image">
             <p>Conoce los conceptos fundamentales de la mecánica automotriz y desarrolla habilidades prácticas en la reparación de vehículos.</p>
+            <p>Precio: $<span class="precio">80</span></p>
+            <button class="agregar-carrito" data-precio="80">Agregar al carrito</button>
             <a href="mecanica.html" class="button">Ver Curso</a>
         </div>
 
@@ -101,6 +128,8 @@
             <p>Desde anatomía hasta diagnósticos, aprende los aspectos fundamentales de la medicina.</p>
             <img src="medicina.jpg" alt="Curso de Medicina" class="course-image">
             <p>Este curso te introduce a los principios básicos de la medicina, proporcionando una base sólida para estudios más avanzados.</p>
+            <p>Precio: $<span class="precio">90</span></p>
+            <button class="agregar-carrito" data-precio="90">Agregar al carrito</button>
             <a href="medicina.html" class="button">Ver Curso</a>
         </div>
 
@@ -110,6 +139,8 @@
             <p>Explora eventos históricos desde la antigüedad hasta el presente.</p>
             <img src="historia.jpg" alt="Curso de Historia" class="course-image">
             <p>Sumérgete en los eventos que han formado el mundo actual, desde las civilizaciones antiguas hasta la historia moderna.</p>
+            <p>Precio: $<span class="precio">65</span></p>
+            <button class="agregar-carrito" data-precio="65">Agregar al carrito</button>
             <a href="historia.html" class="button">Ver Curso</a>
         </div>
 
@@ -119,6 +150,8 @@
             <p>Refuerza tus conocimientos de gramática, ortografía y sintaxis.</p>
             <img src="gramatica.jpg" alt="Curso de Gramática" class="course-image">
             <p>Mejora tu habilidad para escribir correctamente con una comprensión profunda de la gramática y las reglas del idioma.</p>
+            <p>Precio: $<span class="precio">75</span></p>
+            <button class="agregar-carrito" data-precio="75">Agregar al carrito</button>
             <a href="gramatica.html" class="button">Ver Curso</a>
         </div>
 
@@ -128,6 +161,8 @@
             <p>Descubre los grandes pensadores y las teorías filosóficas más influyentes.</p>
             <img src="filosofia.jpg" alt="Curso de Filosofía" class="course-image">
             <p>Explora las preguntas más profundas de la humanidad, desde el significado de la vida hasta la naturaleza del conocimiento.</p>
+            <p>Precio: $<span class="precio">85</span></p>
+            <button class="agregar-carrito" data-precio="85">Agregar al carrito</button>
             <a href="filosofia.html" class="button">Ver Curso</a>
         </div>
 
@@ -139,7 +174,9 @@
                     CSS y JavaScript.</p>
                 <img src="desarrolloweb.jpg" alt="Desarrollo Web" class="course-image">
                 <p>Aprende a diseñar, crear y mantener sitios web, proporcionando en el proceso un portal online coherente y fácil de usar para los usuarios.</p>
-                <a href="desarrolloweb.html" class="button">Ver Curso</a>
+                <p>Precio: $<span class="precio">100</span></p>
+                <button class="agregar-carrito" data-precio="100"> Agregar al carrito</button>
+                <a href="desarolloweb.html" class="button">Ver Curso</a>
             </div>
         </section>
 
