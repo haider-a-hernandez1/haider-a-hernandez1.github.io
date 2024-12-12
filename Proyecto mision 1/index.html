@@ -8,6 +8,7 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+
     <header id="header">
         <h1>Plataforma Educativa</h1>
         <p>Aprende a tu ritmo con nuestros cursos en línea</p>
@@ -16,8 +17,8 @@
     <nav>
         <ul>
             <li><a href="#registro">Registro</a></li>
+            <li><a href="#login">Iniciar Sesión</a></li>
             <li><a href="#cursos">Cursos</a></li>
-            
         </ul>
     </nav>
 
@@ -42,6 +43,26 @@
                 <p id="mensajeError"></p>
             </form>
         </section>
+
+        <!-- Formulario de Login -->
+        <section id="login">
+            <h2>Iniciar Sesión</h2>
+            <form id="formularioLogin" onsubmit="return validarLogin()">
+                <label for="emailLogin">Correo Electrónico:</label>
+                <input type="email" id="emailLogin" name="emailLogin" required placeholder="correo@ejemplo.com">
+
+                <label for="contrasenaLogin">Contraseña:</label>
+                <input type="password" id="contrasenaLogin" name="contrasenaLogin" required placeholder="Escribe tu contraseña">
+                
+                <button type="submit">Iniciar Sesión</button>
+                <p id="mensajeErrorLogin"></p>
+            </form>
+        </section>
+    </div>
+
+
+
+    
 
 
 
