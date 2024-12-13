@@ -102,17 +102,35 @@
 
 
 
-
-
-        
-    
-
         <section id="portafolio" class="intro">
             <h2>Bienvenido a la Plataforma Educativa</h2>
             <p>En nuestra plataforma podrás acceder a una variedad de cursos en línea, participar en foros de discusión, seguir tu progreso y obtener certificados de finalización. ¡Comienza hoy y lleva tu aprendizaje al siguiente nivel!</p>
         </section>
 
         
+        <button id="abrirFormulario">Añadir Nuevo Curso</button>
+
+
+<!-- Formulario Modal para agregar nuevos cursos -->
+<div id="formularioContainer" style="display: none;" class="modal">
+    <form id="formulario" enctype="multipart/form-data">
+        <label for="nombreCurso">Nombre del Curso:</label>
+        <input type="text" id="nombreCurso" name="nombreCurso" required>
+
+        <label for="descripcionCurso">Descripción:</label>
+        <textarea id="descripcionCurso" name="descripcionCurso" required></textarea>
+
+        <label for="imagenCurso">Imagen del Curso:</label>
+        <input type="file" id="imagenCurso" name="imagenCurso" accept="image/*" required>
+
+        <button type="submit" id="guardarCurso">Cargar Nuevo Curso</button>
+        <button type="button" id="cerrarFormulario">Cancelar</button>
+    </form>
+</div>
+
+
+
+
 
 
             <!-- Curso 1: Matemáticas -->

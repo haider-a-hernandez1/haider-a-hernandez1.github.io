@@ -30,15 +30,22 @@ function validarFormulario() {
 
 
 
-// Alternar formularios entre registro y login
-document.getElementById("btnRegistro").addEventListener("click", function() {
-    document.getElementById("registroFormulario").style.display = "block";
-    document.getElementById("loginFormulario").style.display = "none";
+// Obtener referencias a los botones y formularios
+const btnRegistro = document.getElementById('btnRegistro');
+const btnLogin = document.getElementById('btnLogin');
+const registroFormulario = document.getElementById('registroFormulario');
+const loginFormulario = document.getElementById('loginFormulario');
+
+// Mostrar el formulario de Registro y ocultar el de Login
+btnRegistro.addEventListener('click', () => {
+    registroFormulario.style.display = 'block';
+    loginFormulario.style.display = 'none';
 });
 
-document.getElementById("btnLogin").addEventListener("click", function() {
-    document.getElementById("loginFormulario").style.display = "block";
-    document.getElementById("registroFormulario").style.display = "none";
+// Mostrar el formulario de Login y ocultar el de Registro
+btnLogin.addEventListener('click', () => {
+    loginFormulario.style.display = 'block';
+    registroFormulario.style.display = 'none';
 });
 
 
@@ -128,6 +135,63 @@ let cursos = [
     { nombre: "Medicina", precio: 45 },
 ];
 
+
+const abrirFormulario = document.getElementById('abrirFormulario');
+        const cerrarFormulario = document.getElementById('cerrarFormulario');
+        const formularioContainer = document.getElementById('formularioContainer');
+        const formulario = document.getElementById('formulario');
+        const cursosContainer = document.getElementById('cursosContainer');
+
+        // Mostrar el modal
+        abrirFormulario.addEventListener('click', () => {
+            formularioContainer.style.display = 'flex';
+        });
+
+        // Cerrar el modal
+        cerrarFormulario.addEventListener('click', () => {
+            formularioContainer.style.display = 'none';
+            formulario.reset();
+        });
+
+        // Manejar el envío del formulario
+        formulario.addEventListener('submit', (e) => {
+            e.preventDefault(); // Evita recargar la página
+
+            // Obtener valores
+            const nombreCurso = document.getElementById('nombreCurso').value;
+            const descripcionCurso = document.getElementById('descripcionCurso').value;
+            const imagenCurso = document.getElementById('imagenCurso').files[0];
+
+            // Crear un lector de archivos
+            const lector = new FileReader();
+            lector.onload = function (evento) {
+                // Crear la tarjeta del curso
+                const nuevoCurso = document.createElement('div');
+                nuevoCurso.classList.add('curso');
+
+                const img = document.createElement('img');
+                img.src = evento.target.result;
+
+                const titulo = document.createElement('h3');
+                titulo.textContent = nombreCurso;
+
+                const descripcion = document.createElement('p');
+                descripcion.textContent = descripcionCurso;
+
+                // Añadir todo al contenedor
+                nuevoCurso.appendChild(img);
+                nuevoCurso.appendChild(titulo);
+                nuevoCurso.appendChild(descripcion);
+                cursosContainer.appendChild(nuevoCurso);
+            };
+            lector.readAsDataURL(imagenCurso);
+
+            // Cerrar el modal y resetear
+            formularioContainer.style.display = 'none';
+            formulario.reset();
+        });
+
+
 let total = 0;
 let contadorCursos = 0;
 const btnAgregarCurso = document.getElementById("btnAgregarCurso");
@@ -180,16 +244,6 @@ function agregarAlCarrito(precio, nombre) {
 
 
 
-// Función para actualizar la bola flotante
-function actualizarBolaFlotante() {
-    let total = 0;
-    carrito.forEach(item => {
-        total += item.precio;
-    });
-    
-    // Actualizar el contenido del total en la bola flotante
-    document.getElementById('totalCarritoFlotante').textContent = total.toFixed(2);
-}
 
 // Función para actualizar el carrito y el total
 function actualizarCarrito() {
