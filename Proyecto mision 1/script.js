@@ -30,6 +30,19 @@ function validarFormulario() {
 
 
 
+// Alternar formularios entre registro y login
+document.getElementById("btnRegistro").addEventListener("click", function() {
+    document.getElementById("registroFormulario").style.display = "block";
+    document.getElementById("loginFormulario").style.display = "none";
+});
+
+document.getElementById("btnLogin").addEventListener("click", function() {
+    document.getElementById("loginFormulario").style.display = "block";
+    document.getElementById("registroFormulario").style.display = "none";
+});
+
+
+
 
 // Variables globales
 let carrito = [];  // Array para almacenar los cursos seleccionados
@@ -58,9 +71,6 @@ function actualizarCarrito() {
     const descuento = total * 0.1;  // 10% de descuento
     const totalConDescuento = total - descuento;
 
-    // Mostrar el descuento y el total con descuento
-    descuentoSpan.textContent = descuento.toFixed(2);
-    totalConDescuentoSpan.textContent = totalConDescuento.toFixed(2);
 }
 
 // Función para borrar el carrito
