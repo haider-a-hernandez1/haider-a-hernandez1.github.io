@@ -18,7 +18,7 @@ body {
 
 .courses {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
     gap: 20px;
     padding: 40px;
     background-color: #fff;
@@ -55,8 +55,8 @@ body {
 }
 
 .course img {
-    width: 50%; /* Ajusta el tamaño de las imágenes */
-    height: 60%;
+    width: 20%; /* Ajusta el tamaño de las imágenes */
+    height: 20%;
     border-radius: 10px;
     margin-bottom: 5px; /* Agrega un pequeño espacio debajo de la imagen */
     display: block; /* Para asegurarte de que la imagen no desborde el contenedor */
@@ -584,4 +584,46 @@ footer.footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+
+/* codigo caro
+
+ /* Estilos para el modal */
+ .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+}
+
+/* Estilo para la lista de cursos */
+#cursosContainer {
+    margin-top: 20px;
+}
+
+.curso {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.curso img {
+    max-width: 100px;
+    display: block;
+    margin-bottom: 10px;
 }
